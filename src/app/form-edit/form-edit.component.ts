@@ -78,7 +78,7 @@ export class FormEditComponent {
       next: (response) => {
         console.log('Resposta do formulário:', response);
 
-        this.router.navigate(['/edit', this.id])
+        this.router.navigate(['/detail', this.id])
       },
       error: (err) => {
         console.error('Erro ao enviar o formulário:', err);
