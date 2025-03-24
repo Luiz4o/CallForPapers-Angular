@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 interface Card {
   id: number;
@@ -27,7 +28,16 @@ export class HomeComponent implements OnInit {
   currentPage: number = 1;
   totalPages: number = 0;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
+
+  viewCard(id: number) {
+    this.router.navigate(['/detail', id]);
+  }
+
+  editCard(id: number) {
+    this.router.navigate(['/edit', id]);
+
+  }
 
   ngOnInit() {
     this.carregarCards();

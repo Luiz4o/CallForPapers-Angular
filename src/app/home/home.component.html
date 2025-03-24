@@ -2,11 +2,9 @@
 
 <section class="jumbotron text-center">
   <div class="container">
-    <h1 class="jumbotron-heading">Album example</h1>
-    <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-    <p>
-      <a href="#" class="btn btn-primary my-2">Main call to action</a>
-      <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+    <h1 class="jumbotron-heading">Menu de Visualização de Propostas</h1>
+    <p class="lead text-muted">Explore todas as propostas disponíveis! Descubra insights valiosos, veja os detalhes e,
+      se necessário, edite para deixar tudo perfeito.
     </p>
   </div>
 </section>
@@ -18,8 +16,8 @@
         <p class="card-text">{{ card.summary }}</p>
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
-            <button type="button" class="btn btn-sm btn-outline-secondary">VER</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">EDITAR</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" (click)="viewCard(card.id)">Detalhes</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" (click)="editCard(card.id)">Editar</button>
           </div>
           <small>{{ card.author }}</small>
         </div>
@@ -30,19 +28,11 @@
 
 <!-- Botões de Paginação -->
 <div class="d-flex justify-content-center my-4">
-  <button
-    class="btn btn-primary mx-1"
-    (click)="prevPage()"
-    [disabled]="currentPage === 1"
-  >
+  <button class="btn btn-primary mx-1" (click)="prevPage()" [disabled]="currentPage === 1">
     Anterior
   </button>
 
-  <button
-    class="btn btn-primary mx-1"
-    (click)="nextPage()"
-    [disabled]="currentPage === totalPages"
-  >
+  <button class="btn btn-primary mx-1" (click)="nextPage()" [disabled]="currentPage === totalPages">
     Próxima
   </button>
 </div>
