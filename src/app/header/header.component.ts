@@ -12,7 +12,7 @@ export class HeaderComponent {
 
 
   logout() {
-    localStorage.removeItem('token'); // Remove o token do localStorage
-    this.router.navigate(['/login']); // Redireciona para a página de login
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
 }
